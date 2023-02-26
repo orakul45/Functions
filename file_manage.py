@@ -43,14 +43,10 @@ while True:
         print(os.listdir())
 
     elif choice == '5':
-        for dirname, dirnames, filenames in os.walk('.'):
-            # print path to all subdirectories first.
-            for subdirname in dirnames:
-                print(os.path.join(dirname, subdirname))
+        dir_list = [dir for dir in os.listdir() if os.path.isdir(dir)]
+        print(dir_list)
     elif choice == '6':
-        for dirname, dirnames, filenames in os.walk('.'):
-            for filename in filenames:
-                print(os.path.join(dirname, filename))
+        file_list = [file for file in os.listdir() if os.path.isfile(file)]
     elif choice == '7':
         print(sys.platform)
     elif choice == '8':
